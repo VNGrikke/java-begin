@@ -7,12 +7,19 @@ public class b05 {
         System.out.printf("nhap vao chieu dai va chieu rong: ");
         a = sc.nextInt();
         b = sc.nextInt();
-        int area = acreage(a, b);
-        System.out.printf("dien tich = %d", area);
+        int s = acreage(a, b);
+        int cv = perimeter(a, b);
+        System.out.printf("dien tich = %d", s);
+        System.out.printf("dien tich = %d", cv);
     }
 
     public static int acreage(int a, int b){
-        int area = a * b;
+        int s = a * b;
+        return area;
+    }
+
+    public static int perimeter(int a, int b){
+        int cv = (a + b) * 2;
         return area;
     }
 }
