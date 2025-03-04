@@ -47,9 +47,8 @@ public class b10 {
                 System.out.println("x1 = " + x1 + " 1 nghiem thuc duy nhat");
             } else if (delta == 0) {
                 double u = Math.cbrt(-q / 2);
-                double x1 = 2 * u - (b / (3 * a));
-                double x2 = -u - (b / (3 * a));
-                System.out.println("x1 = " + x1 + ", x2 = " + x2 + " 2 nghiem thuc");
+                double x = 2 * u - (b / (3 * a));
+                System.out.println("x1 = " + x + " 2 nghiem trung nhau");
             } else {
                 double r = Math.sqrt(-(p * p * p) / 27);
                 double phi = Math.acos(-q / (2 * r));
