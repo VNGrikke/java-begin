@@ -6,7 +6,7 @@ public class b02 {
         System.out.print("Nhập địa chỉ email: ");
         String email = sc.nextLine().trim();
 
-        String regex = "^[a-zA-Z0-9]+@(gmail|email|edu|yahoo|outlook|icloud|hotmail|gov|org|net|microsoft|apple)\\.[a-zA-Z]{2,6}$";
+        String regex = "^[a-zA-Z0-9]+@[\\w]+\\.[a-zA-Z]{2,6}$";
 
         if (email.matches(regex)) {
             System.out.println("Email hợp lệ");
