@@ -70,6 +70,10 @@ public class b2 {
                     }
                     System.out.println("\nTổng các phần tử trên đường biên: " + sumBorder);
 
+                    if ( n != m ){
+                        System.out.print("Khong phai mang vuong");
+                        return;
+                    }
                     System.out.println("\nCác phần tử trên đường chéo chính:");
                     for (int i = 0; i < n; i++) {
                         if (i < m) {

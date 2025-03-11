@@ -23,7 +23,7 @@ public class b09 {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                arr2[j][n - 1 - i] = arr[i][j];
+                arr2[j][n - i] = arr[i][j];
             }
         }
         System.out.println("xoay mang 90 do");
