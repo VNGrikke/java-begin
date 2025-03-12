@@ -1,13 +1,6 @@
-public class b02 {
-    public static void main(String[] args) {
-        Employee emp = new Employee(1, "Nguyễn Văn Vương", "dev", 50000);
-        emp.displayInfo();
-        emp.increaseSalary(10);
-        System.out.println("Lương sau khi tăng: " + emp.getSalary());
-    }
-}
+package b02;
 
-class Employee {
+public class Employee {
     private int id;
     private String name;
     private String department;

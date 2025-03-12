@@ -1,16 +1,6 @@
-public class b04 {
-    public static void main(String[] args) {
-        Circle circle1 = new Circle();
-        System.out.println("Tam giác 1:");
-        circle1.display();
+package b04;
 
-        Circle circle2 = new Circle(5.0);
-        System.out.println("\nTam giác 2:");
-        circle2.display();
-    }
-}
-
-class Circle {
+public class Circle {
     private double radius;
 
     private static double PI = 3.14159;
