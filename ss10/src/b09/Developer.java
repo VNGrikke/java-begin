@@ -3,10 +3,7 @@ package b09;
 public class Developer extends Employee {
     private String language;
 
-    public Developer() {
-        super();
-        this.language = "Unknown";
-    }
+    public Developer() {}
 
     public Developer(String name, String id, double salary, String language) {
         super(name, id, salary);

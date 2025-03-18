@@ -14,7 +14,7 @@ public class Triangle extends Shape {
 
     @Override
     public double calculateArea() {
-        double p = (a + b + c) / 2; // Nửa chu vi
+        double p = (a + b + c) / 2;
         return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 

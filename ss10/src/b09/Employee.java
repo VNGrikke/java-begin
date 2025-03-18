@@ -5,11 +5,7 @@ public class Employee {
     private String id;
     private double salary;
 
-    public Employee() {
-        this.name = "Unknown";
-        this.id = "000";
-        this.salary = 0.0;
-    }
+    public Employee() {}
 
     public Employee(String name, String id, double salary) {
         this.name = name;

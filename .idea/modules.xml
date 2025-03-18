@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/java.iml" filepath="$PROJECT_DIR$/.idea/java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice2/practice2.iml" filepath="$PROJECT_DIR$/practice2/practice2.iml" />
       <module fileurl="file://$PROJECT_DIR$/practive/practive.iml" filepath="$PROJECT_DIR$/practive/practive.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss01/ss01.iml" filepath="$PROJECT_DIR$/ss01/ss01.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss02/ss02.iml" filepath="$PROJECT_DIR$/ss02/ss02.iml" />
@@ -14,6 +15,9 @@
       <module fileurl="file://$PROJECT_DIR$/ss08/ss08.iml" filepath="$PROJECT_DIR$/ss08/ss08.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss09/ss09.iml" filepath="$PROJECT_DIR$/ss09/ss09.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss10/ss10.iml" filepath="$PROJECT_DIR$/ss10/ss10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss11/ss11.iml" filepath="$PROJECT_DIR$/ss11/ss11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss12/ss12.iml" filepath="$PROJECT_DIR$/ss12/ss12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss13/ss13.iml" filepath="$PROJECT_DIR$/ss13/ss13.iml" />
     </modules>
   </component>
 </project>
