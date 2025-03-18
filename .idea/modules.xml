@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/java.iml" filepath="$PROJECT_DIR$/.idea/java.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice2/practice2.iml" filepath="$PROJECT_DIR$/practice2/practice2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice-chat/practice-chat.iml" filepath="$PROJECT_DIR$/practice-chat/practice-chat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice-me/practice-me.iml" filepath="$PROJECT_DIR$/practice-me/practice-me.iml" />
       <module fileurl="file://$PROJECT_DIR$/practive/practive.iml" filepath="$PROJECT_DIR$/practive/practive.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss01/ss01.iml" filepath="$PROJECT_DIR$/ss01/ss01.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss02/ss02.iml" filepath="$PROJECT_DIR$/ss02/ss02.iml" />
