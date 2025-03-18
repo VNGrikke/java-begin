@@ -11,6 +11,7 @@ public class Product implements IApp {
     private int categoryId;
     private int status;
 
+
     public Product() {}
 
     public Product(String productId, String productName, float importPrice, float exportPrice, String title, String description, int quantity, int categoryId, int status) {
@@ -100,24 +101,93 @@ public class Product implements IApp {
 
     @Override
     public void inputData(Scanner scanner) {
-        System.out.print("Nhập mã sản phẩm (5 ký tự, bắt đầu bằng C, E hoặc T): ");
-        this.productId = scanner.nextLine();
-        System.out.print("Nhập tên sản phẩm (10-100 ký tự): ");
-        this.productName = scanner.nextLine();
-        System.out.print("Nhập giá nhập: ");
-        this.importPrice = Float.parseFloat(scanner.nextLine());
-        System.out.print("Nhập giá xuất (phải lớn hơn " + INTEREST + "): ");
-        this.exportPrice = Float.parseFloat(scanner.nextLine());
-        System.out.print("Nhập tiêu đề (tối đa 200 ký tự): ");
-        this.title = scanner.nextLine();
+        while (true) {
+            System.out.print("Nhập mã sản phẩm (5 ký tự, bắt đầu bằng C, E hoặc T): ");
+            this.productId = scanner.nextLine();
+            if (this.productId.length() == 5) {
+                char firstChar = this.productId.charAt(0);
+                if (firstChar == 'C' || firstChar == 'E' || firstChar == 'T') {
+                    break;
+                } else {
+                    System.out.println("Mã sản phẩm phải bắt đầu bằng C, E hoặc T.");
+                }
+            } else {
+                System.out.println("Mã sản phẩm phải có đúng 5 ký tự.");
+            }
+        }
+
+        while (true) {
+            System.out.print("Nhập tên sản phẩm (10-100 ký tự): ");
+            this.productName = scanner.nextLine();
+            if (this.productName.length() >= 10 && this.productName.length() <= 100) {
+                break;
+            } else {
+                System.out.println("Tên sản phẩm phải có độ dài từ 10 đến 100 ký tự.");
+            }
+        }
+
+        while (true) {
+            System.out.print("Nhập giá nhập: ");
+            this.importPrice = Float.parseFloat(scanner.nextLine());
+            if (this.importPrice > 0) {
+                break;
+            } else {
+                System.out.println("Giá nhập phải lớn hơn 0.");
+            }
+        }
+
+        while (true) {
+            System.out.print("Nhập giá xuất (phải lớn hơn " + INTEREST + "): ");
+            this.exportPrice = Float.parseFloat(scanner.nextLine());
+            if (this.exportPrice > this.importPrice * INTEREST) {
+                break;
+            } else {
+                System.out.println("Giá xuất phải lớn hơn " + (this.importPrice * INTEREST));
+            }
+        }
+
+        while (true) {
+            System.out.print("Nhập tiêu đề (tối đa 200 ký tự): ");
+            this.title = scanner.nextLine();
+            if (this.title.length() <= 200) {
+                break;
+            } else {
+                System.out.println("Tiêu đề không được vượt quá 200 ký tự.");
+            }
+        }
+
         System.out.print("Nhập mô tả: ");
         this.description = scanner.nextLine();
-        System.out.print("Nhập số lượng: ");
-        this.quantity = Integer.parseInt(scanner.nextLine());
-        System.out.print("Nhập mã danh mục: ");
-        this.categoryId = Integer.parseInt(scanner.nextLine());
-        System.out.print("Nhập trạng thái (0: Đang hoạt động, 1: Hết hàng, 2: Không hoạt động): ");
-        this.status = Integer.parseInt(scanner.nextLine());
+
+        while (true) {
+            System.out.print("Nhập số lượng: ");
+            this.quantity = Integer.parseInt(scanner.nextLine());
+            if (this.quantity >= 0) {
+                break;
+            } else {
+                System.out.println("Số lượng phải lớn hơn hoặc bằng 0.");
+            }
+        }
+
+        while (true) {
+            System.out.print("Nhập mã danh mục: ");
+            this.categoryId = Integer.parseInt(scanner.nextLine());
+            if (this.categoryId > 0) {
+                break;
+            } else {
+                System.out.println("Mã danh mục phải lớn hơn 0.");
+            }
+        }
+
+        while (true) {
+            System.out.print("Nhập trạng thái (0: Đang hoạt động, 1: Hết hàng, 2: Không hoạt động): ");
+            this.status = Integer.parseInt(scanner.nextLine());
+            if (this.status >= 0 && this.status <= 2) {
+                break;
+            } else {
+                System.out.println("Trạng thái phải là 0, 1 hoặc 2.");
+            }
+        }
     }
 
     @Override
