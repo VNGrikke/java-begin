@@ -23,7 +23,23 @@ public class Student {
         return gpa;
     }
 
-    public String toString() {
-        return "Student{id='" + id + "', name='" + name + "', gpa=" + gpa + "}";
+
+    public String rateGPA() {
+        if (gpa >= 8.5) {
+            return "Xuat xac";
+        }
+        if (gpa >= 7.0){
+            return "Gioi";
+        }
+        if (gpa >= 5.5){
+            return "Kha";
+        }
+        return "Trung binh/Yeu";
     }
+
+    @Override
+    public String toString() {
+        return "id: " + id + ", Ten: " + name + ", gpa: " + gpa + ", danh gia: " + rateGPA();
+    }
+
 }
