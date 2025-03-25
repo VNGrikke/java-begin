@@ -1,29 +1,39 @@
 package btPortal;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.TreeMap;
 
 public class b08 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nnhap vao 1 so nguyen duong(1-100): ");
+        System.out.println("Nnhap vao 1 so nguyen duong(1-4000): ");
         int K = sc.nextInt();
-        Map<Integer, String> romanNumerals = new TreeMap<>();
-        romanNumerals.put(1, "I");
-        romanNumerals.put(5, "V");
-        romanNumerals.put(10, "X");
-        romanNumerals.put(50, "L");
+        Map<Integer, String> romanNumerals = new LinkedHashMap<Integer,String>();
+        romanNumerals.put(1000, "M");
+        romanNumerals.put(900, "CM");
+        romanNumerals.put(500, "D");
+        romanNumerals.put(400, "CD");
         romanNumerals.put(100, "C");
+        romanNumerals.put(90, "XC");
+        romanNumerals.put(50, "L");
+        romanNumerals.put(40, "XL");
+        romanNumerals.put(10, "X");
+        romanNumerals.put(9, "IX");
+        romanNumerals.put(5, "V");
+        romanNumerals.put(4, "IV");
+        romanNumerals.put(1, "I");
 
-        int current = 10;
-        String romanNumeral = "";
-        do {
-            int number = K % current;
-            System.out.println(number);
-            current *= 10;
-        }while (true);
 
+        StringBuilder romanNumeral = new StringBuilder();
 
+        for (Integer key : romanNumerals.keySet()) {
+            while (K >= key) {
+                romanNumeral.append(romanNumerals.get(key));
+                K -= key;
+            }
+        }
+
+        System.out.println(romanNumeral);
     }
 }
