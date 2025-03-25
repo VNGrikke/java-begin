@@ -16,7 +16,13 @@ public class b08 {
         romanNumerals.put(50, "L");
         romanNumerals.put(100, "C");
 
+        int current = 10;
         String romanNumeral = "";
+        do {
+            int number = K % current;
+            System.out.println(number);
+            current *= 10;
+        }while (true);
 
 
     }
