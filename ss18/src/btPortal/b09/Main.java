@@ -27,26 +27,26 @@ public class Main {
                     break;
                 case 1:
                     System.out.println("Nhap thong tin sp");
-                    System.out.print("Ma sp: ");
-                    int id = scanner.nextInt();
-                    scanner.nextLine();
+                    do {
+                        System.out.print("Ma sp: ");
+                        int id = scanner.nextInt();
+                        scanner.nextLine();
+                        if (products.containsKey(id)) {
+                            System.out.println("ma sp da ton tai. nhap cai khac");
+                        }else {
+                            System.out.print("Nhap ten san pham: ");
+                            String name = scanner.nextLine();
 
-                    System.out.print("Nhap ten san pham: ");
-                    String name = scanner.nextLine();
+                            System.out.print("Nhap gia: ");
+                            float price = scanner.nextFloat();
 
-                    System.out.print("Nhap gia: ");
-                    float price = scanner.nextFloat();
-
-                    System.out.print("So luong: ");
-                    int quantity = scanner.nextInt();
-
-                    if (products.containsKey(id)) {
-                        System.out.println("ma sp da ton tai. nhap cai khac");
-                        break;
-                    }else {
-                        products.put(id, new Product(name,price,quantity));
-                    }
-                break;
+                            System.out.print("So luong: ");
+                            int quantity = scanner.nextInt();
+                            products.put(id, new Product(name,price,quantity));
+                            break;
+                        }
+                    }while (true);
+                    break;
 
                 case 2:
                     System.out.println("NHap ma san pham");
