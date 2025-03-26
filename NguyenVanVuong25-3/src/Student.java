@@ -26,6 +26,10 @@ public class Student {
         return name + " | " + age + " | " + avgScore + " | ";
     }
 
+//    @Override
+//    public int compareTo(Student o){
+//        return Float.compare(this.avgScore, o.avgScore);
+//    }
 
 
 }

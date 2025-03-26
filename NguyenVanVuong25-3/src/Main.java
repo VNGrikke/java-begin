@@ -68,14 +68,11 @@ public class Main {
                     for ( String key : students.keySet()) {
                         totalAvgScore += students.get(key).getAvgScore();
                     }
-                    System.out.println("Diem tb cua tat ca sv: " + totalAvgScore);
+                    System.out.println("Diem tb cua tat ca sv: " + totalAvgScore/students.size());
                 break;
 
                 case 5:
                     List<Map.Entry<String,Student>> newStudents = new ArrayList<>(students.entrySet());
-
-                    newStudents.sort(Map.Entry.comparingByValue(stu));
-
 
 
                 break;
@@ -94,4 +91,7 @@ public class Main {
 
         }while (true);
     }
+
+
+
 }
