@@ -2,11 +2,9 @@ package b09;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         List<Product> products = new ArrayList<>();
 
         System.out.println();
@@ -32,7 +30,7 @@ public class Main {
         System.out.println("Tong gia tri tat ca san pham: " + processor.calculateTotalValue(products));
         System.out.println("Danh sach san pham");
         ProductProcessor.printList(products);
-        sc.close();
+
 
     }
 }

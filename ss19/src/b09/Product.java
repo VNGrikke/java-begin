@@ -1,7 +1,5 @@
 package b09;
 
-import java.util.Scanner;
-
 public class Product {
     private String name;
     private float price;
