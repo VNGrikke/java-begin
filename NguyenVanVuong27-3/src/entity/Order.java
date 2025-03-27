@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Order implements IApp {
     private static int countId;
     private int id;
-    private Optional<Object> customer;
+    private Customer customer;
     private LocalDate orderDate;
     private double totalAmount;
     private Boolean status;
@@ -30,12 +30,12 @@ public class Order implements IApp {
         this.id = id;
     }
 
-    public Optional<Object> getCustomer() {
+    public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
-        this.customer = Optional.ofNullable(customer);
+        this.customer = customer;
     }
 
     public LocalDate getOrderDate() {
@@ -62,7 +62,7 @@ public class Order implements IApp {
         this.status = status;
     }
 
-    public Order(int countId, int id, Optional<Object> customer, LocalDate orderDate, double totalAmount, Boolean status) {
+    public Order(int countId, int id, Customer customer, LocalDate orderDate, double totalAmount, Boolean status) {
         this.countId = countId;
         this.id = id;
         this.customer = customer;
@@ -73,8 +73,8 @@ public class Order implements IApp {
 
     @Override
     public Order inputData(Scanner scanner) {
-        id = countId++;
-        customer = Optional.of("Null");
+        id = ++countId;
+        customer = customer;
         orderDate = LocalDate.parse(scanner.nextLine());
         totalAmount = scanner.nextDouble();
         status = false;
