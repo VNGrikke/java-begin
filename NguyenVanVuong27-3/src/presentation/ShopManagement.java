@@ -1,11 +1,19 @@
 package presentation;
 
+import entity.Customer;
+import entity.Order;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static business.CustomerBusiness.*;
 
 public class ShopManagement {
     static Scanner scanner = new Scanner(System.in);
+    public static List<Order> orderList = new ArrayList<Order>();
+    public static List<Customer> customers = new ArrayList<>();
+
     public static void main(String[] args) {
         System.out.println("**********************SHOP MENU*******************    \n" +
                 "1. Quản lý khách hàng \n" +

@@ -1,7 +1,8 @@
 package entity;
 
+import presentation.ShopManagement;
+
 import java.time.LocalDate;
-import java.util.Optional;
 import java.util.Scanner;
 
 public class Order implements IApp {
@@ -12,22 +13,12 @@ public class Order implements IApp {
     private double totalAmount;
     private Boolean status;
 
-    public Order() {}
-
-    public int getCountId() {
-        return countId;
-    }
-
-    public void setCountId(int countId) {
-        this.countId = countId;
+    public Order() {
+        id = ++countId;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Customer getCustomer() {
@@ -62,23 +53,29 @@ public class Order implements IApp {
         this.status = status;
     }
 
-    public Order(int countId, int id, Customer customer, LocalDate orderDate, double totalAmount, Boolean status) {
-        this.countId = countId;
+    public Order(int id, Customer customer, LocalDate orderDate, double totalAmount, Boolean status) {
         this.id = id;
         this.customer = customer;
         this.orderDate = orderDate;
         this.totalAmount = totalAmount;
-        this.status = false;
+        this.status = status;
     }
 
     @Override
-    public Order inputData(Scanner scanner) {
-        id = ++countId;
+    public void inputData(Scanner scanner) {
+        do {
+            if (ShopManagement.customers.isEmpty() ) {
+                return null;
+            }
+
+            ShopManagement.customers.forEach( customer1 -> System.out.println(customer1.getId() + ": " + customer1.getName()) );
+        }
         customer = customer;
         orderDate = LocalDate.parse(scanner.nextLine());
         totalAmount = scanner.nextDouble();
         status = false;
-        return null;
+        id = ++countId;
+
     }
 
     @Override

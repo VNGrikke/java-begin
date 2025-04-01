@@ -9,15 +9,14 @@ public class Customer implements IApp {
     private String name;
     private Optional<String> email;
 
-    public Customer() {}
+    public Customer() {
+        id = ++countId;
+    }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -42,7 +41,7 @@ public class Customer implements IApp {
     }
 
     @Override
-    public Order inputData(Scanner scanner) {
+    public void inputData(Scanner scanner) {
         do {
             System.out.println("Nhap ten khach hang");
             name = scanner.nextLine();
@@ -51,18 +50,16 @@ public class Customer implements IApp {
                 break;
             }
             System.out.println("Nhap mail khach hang(co the de trong)");
-            email = Optional.ofNullable(scanner.nextLine());
+            String mail = scanner.nextLine();
+            email = mail.isEmpty() ? Optional.empty() : Optional.of(mail);
 
             break;
         }while (true);
         id = ++countId;
-
-
-        return null;
     }
 
     @Override
     public String toString() {
-        return "| " + id + " | " + name + " | " + email.of("Khong co email") + " |\n";
+        return "| " + id + " | " + name + " | " + email.orElse("Khong co email") + " |\n";
     }
 }

@@ -2,12 +2,11 @@ package business;
 
 import entity.Customer;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
+import static presentation.ShopManagement.customers;
+
 public class CustomerBusiness {
-    public static List<Customer> customers = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
 
 
