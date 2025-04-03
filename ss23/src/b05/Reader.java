@@ -8,18 +8,17 @@ public class Reader extends Thread {
     }
 
     @Override
-    public void run() {
+    public synchronized void run() {
         while (true) {
-            synchronized (sharedData) {
-                System.out.println("\nDa doc:" + sharedData.getMessage());
-
                 try {
-                    sleep(3000);
+                    if (sharedData.getMessage() != null) {
+                        wait();
+                        System.out.println("\nReader: " + sharedData.getMessage());
+                    }
                 } catch (InterruptedException e) {
                     throw new RuntimeException();
                 }
             }
         }
 
-        }
-    }
+}

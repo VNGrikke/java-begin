@@ -9,20 +9,14 @@ public class Writer extends Thread {
     }
 
     @Override
-    public void run() {
-        int i = 0;
-        while (true) {
-            try{
-                if (sharedData.getMessage().equals("")) {
-                    wait();
-                }else {
-
-                }
-            }catch (InterruptedException e){
-                e.printStackTrace();
-            }
-
+    public synchronized void run() {
+        System.out.println("writer: dang nhan...");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
-
-        }
+        sharedData.setMessage("Mai di hoc khong");
+        System.out.println("writer: " + sharedData.getMessage());
     }
+}
